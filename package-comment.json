@@ -5,8 +5,10 @@
   "author": "Guangshan <159384@sh.lianjia.com>",
   "private": true,
   "scripts": {
+    // "build": "webpack",
     "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch",
+    // "start": "webpack-dev-server --open",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "server": "node server.js",
     "dev": "node dev-server.js"
@@ -22,8 +24,7 @@
     "style-loader": "^0.19.0",
     "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4",
-    "webpack-merge": "^4.1.1"
+    "webpack-dev-server": "^2.9.4"
   },
   "engines": {
     "node": ">= 4.0.0",
