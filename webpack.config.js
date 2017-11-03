@@ -1,15 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
+
+
 
 module.exports = {
   entry: {
     app: './src/index.js',
-    print: './src/print.js'
+    // print: './src/print.js'
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -29,7 +33,8 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    hot: true
   },
   // sourceMappingUrl都会以//# sourceMappingURL=这种形式出现在js文件的末尾
   // 也可以使用dataUrl格式data:application/json;charset=utf-8;base64,
@@ -47,6 +52,9 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Output Management'
-    })
+    }),
+    // 我们还添加了 NamedModulesPlugin，以便更容易查看要修补(patch)的依赖。
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
 };
