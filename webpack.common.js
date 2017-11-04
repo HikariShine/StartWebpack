@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: './src/index.js',
-    another: './src/another-module.js'
+    // another: './src/another-module.js'
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -14,10 +14,10 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common' // 指定公共 bundle 的名称。
-    })
+    }),
   ],
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   }
 };

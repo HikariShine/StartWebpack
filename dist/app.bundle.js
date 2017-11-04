@@ -1,2 +1,0 @@
-webpackJsonp([0],[,function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var c=t(0),o=t.n(c);document.body.appendChild(function(){var e=document.createElement("div"),n=document.createElement("button");return e.innerHTML=o.a.join(["Hello","webpack"]," "),n.innerHTML="Click me and check the console!",e.appendChild(n),e}())}],[1]);
-//# sourceMappingURL=app.bundle.js.map
